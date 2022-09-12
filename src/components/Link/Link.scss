@@ -1,14 +1,10 @@
-// <a className="link">
-// <span>Follow Us on Twitter</span>
-// <img src="/assets/twitter-icon.svg" alt="Twitter icon" />
-// </a>
-
 @import "../../scss/variables";
 
 // global links style
 .link {
     padding: 16px 14px;
     font-size: 16px;
+    text-decoration: none;
 }
 
 // primary link style

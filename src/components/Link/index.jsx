@@ -1,10 +1,12 @@
 import "./Link.scss";
 
-function Link({ text, type, hasIcon, icon }) {
+function Link(props) {
   return (
-    <a className={`link ${type} --icon`}>
-      <span>{text}</span>
-      {hasIcon && <img className="button-icon" src={icon} alt="button icon" />}
+    <a className={`link ${props.type} --icon`} href={props.url}>
+      <span>{props.text}</span>
+      {props.hasIcon && (
+        <img className="button-icon" src={props.icon} alt="button icon" />
+      )}
     </a>
   );
 }

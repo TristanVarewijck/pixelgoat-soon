@@ -16,6 +16,7 @@ function Header() {
               hasIcon={true}
               icon="/assets/twitter-icon.svg"
               text="Follow us on Twitter"
+              url="https://twitter.com/pixelgoatxyz"
             />
           </li>
         </ul>
