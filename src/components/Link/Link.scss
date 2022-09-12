@@ -1,0 +1,38 @@
+// <a className="link">
+// <span>Follow Us on Twitter</span>
+// <img src="/assets/twitter-icon.svg" alt="Twitter icon" />
+// </a>
+
+@import "../../scss/variables";
+
+// global links style
+.link {
+    padding: 16px 14px;
+    font-size: 16px;
+}
+
+// primary link style
+.--primary {
+    background: $btn-gradient;
+    span {
+        color: $bg-color-2;
+    }
+}
+
+// secondary link style
+.--secondary {
+    background: none;
+    border: 1.2px solid $action-color;
+
+    span {
+        color: $text-color;
+        font-weight: 500;
+    }
+}
+
+// link has icon?
+.--icon {
+    img {
+        margin-left: 10px;
+    }
+}
