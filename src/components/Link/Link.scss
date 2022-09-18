@@ -1,7 +1,8 @@
 @import "../../scss/variables";
 
 // global links style
-.link {
+.link,
+.submit {
     padding: 16px 14px;
     font-size: 16px;
     text-decoration: none;
@@ -10,6 +11,7 @@
 // primary link style
 .--primary {
     background: $btn-gradient;
+    border: none;
     span {
         color: $bg-color-2;
     }

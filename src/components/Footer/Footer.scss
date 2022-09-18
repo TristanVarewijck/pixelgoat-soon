@@ -1,0 +1,41 @@
+.footer {
+    padding: 0 25px 0 25px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 75px;
+    background: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .social-links {
+        display: flex;
+        gap: 10px;
+
+        li:hover {
+            background-color: #e7e7e7;
+            transition: 200ms linear;
+        }
+
+        li {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #dcdcdc;
+        }
+    }
+}
+
+.darkmode {
+    .social-links {
+        li:hover {
+            background-color: #e7e7e7;
+        }
+        li {
+            border: 1px solid #fff;
+        }
+    }
+}

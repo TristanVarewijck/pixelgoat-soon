@@ -7,9 +7,9 @@
 // sass variables
 @import "./variables";
 // react-boostrap
+// @import "./custom";
 @import "~bootstrap/scss/bootstrap";
-// boostrap overwrites
-@import "./custom";
+
 // global styles
 
 * {
@@ -35,9 +35,14 @@
     padding: 0;
   }
 
-  body {
+  .App {
     background-color: $bg-color;
+    height: 100vh;
   }
+}
+
+.darkmode {
+  background-color: $text-color;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {

@@ -1,14 +1,22 @@
 import "./Header.scss";
 
 import Link from "../Link";
+import Switch from "../Switch";
 
-function Header() {
+function Header(props) {
   return (
-    <header className="header">
+    <header className={`header ${props.darkMode ? "darkmode" : ""}`}>
       <nav>
         <ul>
           <li>
-            <img src="/assets/logo.svg" alt="Pixelgoat logo" />
+            <img
+              src={`/assets/logo${props.darkMode ? "-white" : ""}.svg`}
+              alt="Pixelgoat logo"
+            />
+            <Switch
+              darkMode={props.darkMode}
+              darkModeHandler={props.darkModeHandler}
+            />
           </li>
           <li>
             <Link
