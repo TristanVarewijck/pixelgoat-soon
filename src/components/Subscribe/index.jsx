@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./Subscribe.scss";
 import "../Link/Link.scss";
 import Form from "react-bootstrap/Form";
+import { DarkTheme } from "../../App";
 
 function Subscribe(props) {
+  const darkMode = useContext(DarkTheme);
   const [formData, setFormData] = useState({
     email: "",
     check: "",
@@ -21,19 +23,28 @@ function Subscribe(props) {
 
   function submitHandler(e) {
     e.preventDefault();
-    console.log("submitted");
   }
 
   return (
-    <Form>
-      <Form.Control
-        type="email"
-        placeholder="name@example.com"
-        onChange={handleFormData}
-        name="email"
-        value={formData.email}
-        required
-      />
+    <Form className="subscribe">
+      <Form.Group className="input-group">
+        <Form.Control
+          type="email"
+          placeholder="name@example.com"
+          onChange={handleFormData}
+          name="email"
+          value={formData.email}
+          required
+        />
+
+        <button
+          className={`submit --primary ${props.hasIcon ? "--icon" : ""}`}
+          onClick={submitHandler}
+        >
+          Submit
+        </button>
+      </Form.Group>
+
       <Form.Check
         type="checkbox"
         label="Give us permission to sent You Our Newsletter"
@@ -42,12 +53,6 @@ function Subscribe(props) {
         value={formData.email}
         required
       />
-      <button
-        className={`submit --primary ${props.hasIcon ? "--icon" : ""}`}
-        onClick={submitHandler}
-      >
-        Submit
-      </button>
     </Form>
   );
 }

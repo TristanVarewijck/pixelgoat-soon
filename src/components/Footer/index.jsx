@@ -1,6 +1,10 @@
-import "./Footer.scss";
+import { useContext } from "react";
 
-function Footer(props) {
+import "./Footer.scss";
+import { DarkTheme } from "../../App";
+
+function Footer() {
+  const darkMode = useContext(DarkTheme);
   const socialLinks = {
     twitterLink: "https://twitter.com/pixelgoatxyz",
     discordLink: "",
@@ -8,12 +12,12 @@ function Footer(props) {
   };
 
   return (
-    <footer className={`footer ${props.darkMode ? "darkmode" : ""}`}>
+    <footer className={`footer ${darkMode ? "darkmode" : ""}`}>
       <ul className="social-links">
         <li>
           <a href={socialLinks.twitterLink} rel="noreferrer" target="_blank">
             <img
-              src={`/assets/twitter${props.darkMode ? "-white" : ""}.svg`}
+              src={`/assets/twitter${darkMode ? "-white" : ""}.svg`}
               alt="twitter icon"
             />
           </a>
@@ -21,7 +25,7 @@ function Footer(props) {
         <li>
           <a href={socialLinks.discordLink} rel="noreferrer" target="_blank">
             <img
-              src={`/assets/discord${props.darkMode ? "-white" : ""}.svg`}
+              src={`/assets/discord${darkMode ? "-white" : ""}.svg`}
               alt="discord icon"
             />
           </a>
@@ -29,14 +33,14 @@ function Footer(props) {
         <li>
           <a href={socialLinks.telegramLink} rel="noreferrer" target="_blank">
             <img
-              src={`/assets/telegram${props.darkMode ? "-white" : ""}.svg`}
+              src={`/assets/telegram${darkMode ? "-white" : ""}.svg`}
               alt="telegram icon"
             />
           </a>
         </li>
       </ul>
       <img
-        src={`/assets/logo${props.darkMode ? "-white" : ""}.svg`}
+        src={`/assets/logo${darkMode ? "-white" : ""}.svg`}
         alt="pixelgoat logo"
       />
     </footer>

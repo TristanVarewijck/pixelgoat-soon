@@ -1,0 +1,37 @@
+@import "../../scss/variables";
+.subscribe {
+    margin-top: 70px;
+
+    .input-group {
+        border-bottom: 1px solid $text-color;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+
+        input[type="email"] {
+            border: none;
+            border-radius: 0px;
+            background: none;
+        }
+    }
+
+    button {
+        color: white;
+    }
+}
+
+.darkmode {
+    .input-group {
+        border-bottom: 1px solid $bg-color-2;
+    }
+
+    input:placeholder {
+        color: green;
+    }
+
+    .form-check {
+        label {
+            color: $bg-color-2;
+            opacity: 0.65;
+        }
+    }
+}

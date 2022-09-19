@@ -1,22 +1,21 @@
+import { useContext } from "react";
 import "./Header.scss";
-
 import Link from "../Link";
 import Switch from "../Switch";
+import { DarkTheme } from "../../App";
 
-function Header(props) {
+function Header({ darkModeHandler }) {
+  const darkMode = useContext(DarkTheme);
   return (
-    <header className={`header ${props.darkMode ? "darkmode" : ""}`}>
+    <header className={`header ${darkMode ? "darkmode" : ""}`}>
       <nav>
         <ul>
           <li>
             <img
-              src={`/assets/logo${props.darkMode ? "-white" : ""}.svg`}
+              src={`/assets/logo${darkMode ? "-white" : ""}.svg`}
               alt="Pixelgoat logo"
             />
-            <Switch
-              darkMode={props.darkMode}
-              darkModeHandler={props.darkModeHandler}
-            />
+            <Switch darkMode={darkMode} darkModeHandler={darkModeHandler} />
           </li>
           <li>
             <Link
