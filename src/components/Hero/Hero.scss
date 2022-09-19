@@ -1,6 +1,9 @@
 .hero {
     margin-top: 70px;
     padding: 0 25px 0 25px;
+    display: flex;
+    gap: 150px;
+
     small {
         text-transform: uppercase;
         font-size: 12.5px;
@@ -25,6 +28,15 @@
         letter-spacing: 0.005em;
         font-weight: 200;
     }
+
+    .cards-group {
+        display: flex;
+        .display-card:not(:nth-of-type(1)) {
+            transform: scale(0.65);
+            margin-left: -20px;
+            margin-top: 4em;
+        }
+    }
 }
 
 .darkmode {
@@ -32,5 +44,21 @@
     h1,
     h4 {
         color: #fff;
+    }
+    .cards-group {
+        .display-card {
+            position: relative;
+            background: rgba(#000, 0.87);
+            width: 295px;
+            height: fit-content;
+            border: 1px solid rgba(236, 236, 236, 0.75);
+            box-shadow: none;
+            padding: 25px 10px;
+        }
+        .display-card:not(:nth-of-type(1)) {
+            transform: scale(0.65);
+            margin-left: -20px;
+            margin-top: 4em;
+        }
     }
 }
