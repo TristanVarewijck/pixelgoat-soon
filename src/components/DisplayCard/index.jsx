@@ -23,7 +23,7 @@ function DisplayCard() {
             <p>1.2 ETH</p>
           </div>
         </div>
-        <a href="#">Learn more about this collection</a>
+        <a href="#">Learn more about pixelgoat</a>
       </div>
     </div>
   );

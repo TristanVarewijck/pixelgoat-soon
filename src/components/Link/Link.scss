@@ -3,36 +3,46 @@
 // global links style
 .link,
 .submit {
-    padding: 12px 14px;
-    font-size: 14.5px;
-    text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 0.02em;
+  padding: 12px 14px;
+  font-size: 14.5px;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: 200ms linear;
+
+  &:hover {
+    opacity: 0.85;
+    background: linear-gradient(
+      200.02deg,
+      $action-color 0.24%,
+      $text-color 47.06%
+    );
+  }
 }
 
 // primary link style
 .--primary {
-    background: $btn-gradient;
-    border: none;
-    span {
-        color: $bg-color-2;
-    }
+  background: $btn-gradient;
+  border: none;
+  span {
+    color: $bg-color-2;
+  }
 }
 
 // secondary link style
 .--secondary {
-    background: none;
-    border: 1.2px solid $action-color;
+  background: none;
+  border: 1.2px solid $action-color;
 
-    span {
-        color: $text-color;
-        font-weight: 500;
-    }
+  span {
+    color: $text-color;
+    font-weight: 500;
+  }
 }
 
 // link has icon?
 .--icon {
-    img {
-        margin-left: 10px;
-    }
+  img {
+    margin-left: 10px;
+  }
 }

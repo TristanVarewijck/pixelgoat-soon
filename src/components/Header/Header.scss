@@ -1,42 +1,42 @@
 @import "../../scss/variables";
 
 .header {
-    nav {
-        height: 75px;
-        background: $bg-color-2;
+  nav {
+    height: 75px;
+    background: $bg-color-2;
+    display: flex;
+    align-items: center;
+    padding: 0 25px 0 25px;
+
+    ul {
+      margin: 0px;
+      height: 100%;
+      width: 100%;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      li:nth-of-type(1) {
         display: flex;
         align-items: center;
-        padding: 0 25px 0 25px;
-
-        ul {
-            margin: 0px;
-            height: 100%;
-            width: 100%;
-            list-style: none;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            li:nth-of-type(1) {
-                display: flex;
-                align-items: center;
-                gap: 25px;
-            }
-        }
+        gap: 25px;
+      }
     }
+  }
 }
 
 .darkmode {
-    nav {
-        background: $text-color;
-        color: $bg-color-2;
+  nav {
+    background: rgba(41, 41, 41, 0.2);
+    color: $bg-color-2;
 
-        ul {
-            li {
-                label {
-                    color: $bg-color-2;
-                }
-            }
+    ul {
+      li {
+        label {
+          color: $bg-color-2;
         }
+      }
     }
+  }
 }

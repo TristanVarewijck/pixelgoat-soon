@@ -8,7 +8,7 @@ function Hero() {
   const darkMode = useContext(DarkTheme);
   return (
     <div className={`hero ${darkMode ? "darkmode" : ""}`}>
-      <div>
+      <div className="container">
         <small>
           <img
             src={`/assets/bulletpoint${darkMode ? "-white" : ""}.svg`}
@@ -21,7 +21,7 @@ function Hero() {
           <img src="/assets/rocket.svg" alt="rocket icon" />
         </h1>
         <p>
-          Subscribe for a High valuable <span>Free NFT</span> Gift!
+          Subscribe and get a Valuable <span>Free NFT</span> Gift!
         </p>
         <Subscribe hasIcon={true} />
       </div>
