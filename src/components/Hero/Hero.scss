@@ -1,12 +1,12 @@
+@import "../../scss/keyframes";
+
 .hero {
   margin-top: 100px;
-  padding: 0 25px 0 25px;
   display: flex;
   align-items: baseline;
-  gap: 150px;
+  gap: 100px;
 
   &:hover p span {
-    // letter-spacing: 0.02em;
     font-weight: 600;
     margin-bottom: 0.5em;
   }
@@ -29,9 +29,11 @@
     margin-bottom: 25px;
 
     img {
-      margin-left: 20px;
+      margin-left: 10px;
       width: 55px;
       height: auto;
+      animation: wave-animation 2.5s infinite;
+      transform-origin: 70% 70%;
     }
   }
 

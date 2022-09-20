@@ -5,8 +5,10 @@ function DisplayCard() {
     <div class="display-card ">
       <div class="body body-display">
         <div class="body-header">
-          <small>#12345</small>
-          <p>PixelGoat</p>
+          <small>#00000</small>
+          <p>
+            PixelGoat Launch <img src="/assets/rocket.svg" alt="rocket icon" />
+          </p>
         </div>
         <div class="body-img-container">
           <div class="body-img">
@@ -20,7 +22,7 @@ function DisplayCard() {
           </div>
           <div class="mint-price">
             <small>Mint</small>
-            <p>1.2 ETH</p>
+            <p>FREE</p>
           </div>
         </div>
         <a href="#">Learn more about pixelgoat</a>

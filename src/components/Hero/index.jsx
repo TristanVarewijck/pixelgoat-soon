@@ -7,8 +7,8 @@ import DisplayCard from "../DisplayCard";
 function Hero() {
   const darkMode = useContext(DarkTheme);
   return (
-    <div className={`hero ${darkMode ? "darkmode" : ""}`}>
-      <div className="container">
+    <div className={`hero ${darkMode ? "darkmode" : ""} container`}>
+      <div>
         <small>
           <img
             src={`/assets/bulletpoint${darkMode ? "-white" : ""}.svg`}
@@ -18,7 +18,7 @@ function Hero() {
         </small>
         <h1>
           Get Notified before we Launch our Platform
-          <img src="/assets/rocket.svg" alt="rocket icon" />
+          <img src={`/assets/hand${darkMode ? "-white" : ""}.svg`} />
         </h1>
         <p>
           Subscribe and get a Valuable <span>Free NFT</span> Gift!
