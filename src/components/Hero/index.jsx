@@ -7,7 +7,7 @@ import DisplayCard from "../DisplayCard";
 function Hero() {
   const darkMode = useContext(DarkTheme);
   return (
-    <div className={`hero ${darkMode ? "darkmode" : ""} container`}>
+    <div className={`hero ${darkMode ? "darkmode" : ""} container-xl`}>
       <div>
         <small>
           <img
@@ -21,7 +21,7 @@ function Hero() {
           <img src={`/assets/hand${darkMode ? "-white" : ""}.svg`} />
         </h1>
         <p>
-          Subscribe and get a Valuable <span>Free NFT</span> Gift!
+          Subscribe and get a Valuable <span>Free NFT</span> Welcome Gift!
         </p>
         <Subscribe hasIcon={true} />
       </div>

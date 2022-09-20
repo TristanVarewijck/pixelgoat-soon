@@ -40,3 +40,50 @@
     }
   }
 }
+
+@media only screen and (max-width: 625px) {
+  .header {
+    nav {
+      ul {
+        li {
+          a {
+            span {
+              display: none;
+            }
+            img {
+              margin: 0px;
+            }
+          }
+        }
+        li:nth-of-type(1) {
+          gap: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .header {
+    nav {
+      ul {
+        li {
+          > img {
+            // display: none;s
+          }
+          a {
+            span {
+              display: none;
+            }
+            img {
+              margin: 0px;
+            }
+          }
+        }
+        li:nth-of-type(1) {
+          gap: 15px;
+        }
+      }
+    }
+  }
+}

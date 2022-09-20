@@ -1,4 +1,5 @@
 @import "../../scss/keyframes";
+@import "../../scss/variables";
 
 .hero {
   margin-top: 100px;
@@ -62,10 +63,10 @@
   small,
   h1,
   p {
-    color: #fff;
+    color: $bg-color-2;
 
     span {
-      color: #fff;
+      color: $bg-color-2;
     }
   }
   .cards-group {
@@ -75,13 +76,30 @@
 
       a {
         background: none;
-        color: #fff;
+        color: $bg-color-2;
       }
     }
     .display-card:not(:nth-of-type(1)) {
       transform: scale(0.65);
       margin-left: -20px;
       margin-top: 4em;
+    }
+  }
+}
+
+@media only screen and (max-width: 1125px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+
+    .cards-group {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 70px;
+      .display-card:not(:nth-of-type(1)) {
+        display: none;
+      }
     }
   }
 }
