@@ -15,6 +15,9 @@ function Footer() {
     <footer className={`footer ${darkMode ? "darkmode" : ""}`}>
       <ul className="social-links">
         <li>
+          <h6>Follow Us:</h6>
+        </li>
+        <li>
           <a href={socialLinks.twitterLink} rel="noreferrer" target="_blank">
             <img
               src={`/assets/twitter${darkMode ? "-white" : ""}.svg`}

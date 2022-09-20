@@ -1,21 +1,38 @@
 @import "../../scss/variables";
+
 .subscribe {
     margin-top: 70px;
-
     .input-group {
         border-bottom: 1px solid $text-color;
         padding-bottom: 5px;
         margin-bottom: 15px;
 
+        input:focus,
+        input:active {
+            outline: none;
+            box-shadow: none;
+        }
+
         input[type="email"] {
             border: none;
             border-radius: 0px;
             background: none;
+            color: $text-color;
+            background-image: url("../../../public/assets/mail.svg");
+            background-position: 0px 15px;
+            background-repeat: no-repeat;
+            padding-left: 40px;
         }
     }
 
     button {
         color: white;
+    }
+
+    .form-check {
+        label {
+            font-size: 12.5px;
+        }
     }
 }
 
@@ -24,14 +41,14 @@
         border-bottom: 1px solid $bg-color-2;
     }
 
-    input:placeholder {
-        color: green;
+    input[type="email"] {
+        color: white !important;
+        background-image: url("../../../public/assets/mail-white.svg") !important;
     }
 
     .form-check {
         label {
             color: $bg-color-2;
-            opacity: 0.65;
         }
     }
 }

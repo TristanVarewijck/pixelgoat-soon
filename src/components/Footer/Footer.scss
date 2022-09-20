@@ -11,14 +11,15 @@
 
     .social-links {
         display: flex;
-        gap: 10px;
+        align-items: center;
+        gap: 8px;
 
         li:hover {
             background-color: #e7e7e7;
             transition: 200ms linear;
         }
 
-        li {
+        li:not(:nth-of-type(1)) {
             width: 35px;
             height: 35px;
             display: flex;
@@ -34,8 +35,14 @@
         li:hover {
             background-color: #e7e7e7;
         }
-        li {
+        li:not(:nth-of-type(1)) {
             border: 1px solid #fff;
+        }
+
+        li {
+            h6 {
+                color: #fff;
+            }
         }
     }
 }

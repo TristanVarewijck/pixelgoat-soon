@@ -1,11 +1,8 @@
-import { useContext } from "react";
 import "./DisplayCard.scss";
-import { DarkTheme } from "../../App";
 
 function DisplayCard() {
-  const darkMode = useContext(DarkTheme);
   return (
-    <div class="display-card">
+    <div class="display-card ">
       <div class="body body-display">
         <div class="body-header">
           <small>#12345</small>
@@ -13,7 +10,7 @@ function DisplayCard() {
         </div>
         <div class="body-img-container">
           <div class="body-img">
-            <img src="#" alt="nft collection profile image" />
+            <img src="/assets/example.png" alt="nft collection profile image" />
           </div>
         </div>
         <div class="body-content">

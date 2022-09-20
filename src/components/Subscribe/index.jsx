@@ -1,11 +1,9 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import "./Subscribe.scss";
 import "../Link/Link.scss";
 import Form from "react-bootstrap/Form";
-import { DarkTheme } from "../../App";
 
 function Subscribe(props) {
-  const darkMode = useContext(DarkTheme);
   const [formData, setFormData] = useState({
     email: "",
     check: "",
@@ -41,7 +39,8 @@ function Subscribe(props) {
           className={`submit --primary ${props.hasIcon ? "--icon" : ""}`}
           onClick={submitHandler}
         >
-          Submit
+          Subscribe
+          <img src="/assets/arrow.svg" alt="arrow icon" />
         </button>
       </Form.Group>
 
