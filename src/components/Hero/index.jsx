@@ -6,6 +6,13 @@ import DisplayCard from "../DisplayCard";
 
 function Hero() {
   const darkMode = useContext(DarkTheme);
+  const data = [
+    "/assets/images/nft-example-1.png",
+    "/assets/images/nft-example-2.png",
+    "/assets/images/nft-example-3.png",
+    "/assets/images/nft-example-4.png",
+  ];
+
   return (
     <div className={`hero ${darkMode ? "darkmode" : ""} container-xl`}>
       <div>
@@ -18,7 +25,10 @@ function Hero() {
         </small>
         <h1>
           Get Notified before we Launch our Platform
-          <img src={`/assets/hand${darkMode ? "-white" : ""}.svg`} />
+          <img
+            src={`/assets/hand${darkMode ? "-white" : ""}.svg`}
+            alt="Shaking hand icon"
+          />
         </h1>
         <p>
           Subscribe and get a Valuable <span>Free NFT</span> Welcome Gift!
@@ -27,8 +37,8 @@ function Hero() {
       </div>
 
       <div className="cards-group">
-        <DisplayCard />
-        <DisplayCard />
+        <DisplayCard data={data} isReversed={true} />
+        <DisplayCard data={data} isReversed={false} />
       </div>
     </div>
   );

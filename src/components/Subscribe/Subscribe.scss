@@ -18,15 +18,11 @@
       border-radius: 0px;
       background: none;
       color: $text-color;
-      background-image: url("../../../public/assets/mail.svg");
+      // background-image: url("../../../public/assets/mail.svg");
       background-position: 0px 15px;
       background-repeat: no-repeat;
       padding-left: 40px;
     }
-  }
-
-  button {
-    color: white;
   }
 
   .form-check {
@@ -40,6 +36,69 @@
 
     label {
       font-size: 14.5px;
+    }
+  }
+
+  button {
+    color: $bg-color-2;
+  }
+
+  .feedback-submit {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 25px;
+    transition: 200ms linear;
+    animation: fadeIn 400ms forwards;
+
+    p {
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+
+    img {
+      width: 14px;
+      height: auto;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-25px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0px);
+    }
+  }
+
+  .submit-succes {
+    padding: 1.5em 2em;
+    border: 1px solid #ececec;
+
+    .submit-succes-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      small {
+        margin-bottom: 10px;
+      }
+
+      img {
+        width: 85px;
+        height: auto;
+      }
+
+      p {
+        font-size: 16px;
+        display: inline;
+        margin: 0px;
+        span {
+          font-weight: 600;
+        }
+      }
     }
   }
 }
@@ -56,6 +115,14 @@
 
   .form-check {
     label {
+      color: $bg-color-2;
+    }
+  }
+
+  .feedback-submit {
+    display: flex;
+
+    p {
       color: $bg-color-2;
     }
   }

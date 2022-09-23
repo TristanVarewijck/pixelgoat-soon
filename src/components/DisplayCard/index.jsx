@@ -1,26 +1,45 @@
+import { useState, useEffect } from "react";
 import "./DisplayCard.scss";
 
-function DisplayCard() {
+function DisplayCard(props) {
+  const [count, setCount] = useState(0);
+  const [url, setUrl] = useState();
+  const dataSize = props.data.length - 1;
+  const images = props.isReversed ? [...props.data] : [...props.data].reverse();
+
+  setTimeout(() => {
+    if (count < dataSize) {
+      setCount(count + 1);
+    } else if (count >= dataSize) {
+      setCount(0);
+    }
+  }, 800);
+
+  useEffect(() => {
+    // console.log(`data size: ${props.data.length} + count: ${count}`);
+    setUrl(images[count]);
+  }, [count]);
+
   return (
-    <div class="display-card ">
-      <div class="body body-display">
-        <div class="body-header">
+    <div className="display-card ">
+      <div className="body body-display">
+        <div className="body-header">
           <small>#00000</small>
           <p>
             PixelGoat Launch <img src="/assets/rocket.svg" alt="rocket icon" />
           </p>
         </div>
-        <div class="body-img-container">
-          <div class="body-img">
-            <img src="/assets/example.png" alt="nft collection profile image" />
+        <div className="body-img-container">
+          <div className="body-img">
+            <img src={url} alt=" " />
           </div>
         </div>
-        <div class="body-content">
-          <div class="total">
+        <div className="body-content">
+          <div className="total">
             <small>Total</small>
             <p>6000</p>
           </div>
-          <div class="mint-price">
+          <div className="mint-price">
             <small>Mint</small>
             <p>FREE</p>
           </div>
