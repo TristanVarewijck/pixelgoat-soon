@@ -74,8 +74,9 @@
   }
 
   .submit-succes {
-    padding: 1.5em 2em;
+    padding: 1.2em 1.8em;
     border: 1px solid #ececec;
+    animation: fadeIn 400ms forwards;
 
     .submit-succes-content {
       display: flex;
@@ -93,7 +94,7 @@
 
       p {
         font-size: 16px;
-        display: inline;
+        line-height: 150%;
         margin: 0px;
         span {
           font-weight: 600;

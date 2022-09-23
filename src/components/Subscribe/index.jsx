@@ -1,21 +1,53 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Subscribe.scss";
 import "../Link/Link.scss";
 import Form from "react-bootstrap/Form";
+import { db } from "../../firebase";
+import {
+  doc,
+  docs,
+  addDoc,
+  getDocs,
+  collection,
+  get,
+} from "firebase/firestore";
+
+// email collection ref
 
 function Subscribe(props) {
   const [feedbackInput, setFeedbackInput] = useState("/assets/mail.svg");
   const [feedbackSubmit, setFeedbackSubmit] = useState({});
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [emails, setEmails] = useState();
   const [formData, setFormData] = useState({
     email: "",
     check: "",
   });
-  const validEmailCheck = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  const colRef = collection(db, "adresses");
+  const validEmailCheck = new RegExp(
+    /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/,
+    "gm"
+  );
+
+  useEffect(() => {
+    async function getDocuments() {
+      const docsSnap = await getDocs(colRef);
+      const emailArray = docsSnap.docs.map((doc) => {
+        return doc.data().email;
+      });
+
+      setEmails([...emailArray]);
+    }
+    getDocuments();
+  }, []);
 
   function handleFormData(e) {
     setFormData(function (prevState) {
       const { type, value, name, checked } = e.target;
+
+      if (feedbackSubmit.message) {
+        setFeedbackSubmit({});
+      }
 
       if (name === "email") {
         if (!value.includes("@")) {
@@ -65,6 +97,15 @@ function Subscribe(props) {
       });
     } else if (formData.check) {
       setHasSubmitted(true);
+
+      if (emails.includes(formData.email)) {
+        console.log("This email is already subscribed to the email list!");
+      } else {
+        async function insertEmail() {
+          await addDoc(colRef, formData);
+        }
+        insertEmail();
+      }
     }
   }
 
@@ -121,7 +162,7 @@ function Subscribe(props) {
               <small>{formData.email}</small>
               <p>
                 Welcome to PixelGoat, keep watching your Imbox to collect your
-                <span> Free NFT Welcome Gift!</span>
+                <span> Free NFT </span>Welcome Gift!
               </p>
             </div>
 

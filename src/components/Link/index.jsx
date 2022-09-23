@@ -5,6 +5,8 @@ function Link(props) {
     <a
       className={`link ${props.type} ${props.hasIcon ? "--icon" : ""}`}
       href={props.url}
+      target="_blank"
+      rel="noreferrer"
     >
       <span>{props.text}</span>
       {props.hasIcon && (
