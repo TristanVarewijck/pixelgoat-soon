@@ -3,16 +3,7 @@ import "./Subscribe.scss";
 import "../Link/Link.scss";
 import Form from "react-bootstrap/Form";
 import { db } from "../../firebase";
-import {
-  doc,
-  docs,
-  addDoc,
-  getDocs,
-  collection,
-  get,
-} from "firebase/firestore";
-
-// email collection ref
+import { addDoc, getDocs, collection } from "firebase/firestore";
 
 function Subscribe(props) {
   const [feedbackInput, setFeedbackInput] = useState("/assets/mail.svg");
@@ -96,14 +87,22 @@ function Subscribe(props) {
         };
       });
     } else if (formData.check) {
-      setHasSubmitted(true);
-
       if (emails.includes(formData.email)) {
-        console.log("This email is already subscribed to the email list!");
+        setFeedbackSubmit((prevState) => {
+          return {
+            ...prevState,
+            message: "This email is already Subscribed to our Newsletter",
+            icon: "/assets/warning-red.svg",
+          };
+        });
       } else {
+        setHasSubmitted(true);
+
+        // insert new email adress after check
         async function insertEmail() {
           await addDoc(colRef, formData);
         }
+
         insertEmail();
       }
     }

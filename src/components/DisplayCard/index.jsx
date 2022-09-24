@@ -16,7 +16,6 @@ function DisplayCard(props) {
   }, 800);
 
   useEffect(() => {
-    // console.log(`data size: ${props.data.length} + count: ${count}`);
     setUrl(images[count]);
   }, [count]);
 
@@ -44,7 +43,13 @@ function DisplayCard(props) {
             <p>FREE</p>
           </div>
         </div>
-        <a href="#">Learn more about pixelgoat</a>
+        <a
+          href="https://twitter.com/pixelgoatxyz"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Learn more about pixelgoat
+        </a>
       </div>
     </div>
   );

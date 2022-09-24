@@ -1,26 +1,29 @@
 import { useState, createContext } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./scss/App.scss";
 
-// components
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
+import Home from "./pages/Home";
+import Private from "./pages/Private";
 export const DarkTheme = createContext(null);
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   function darkModeToggler() {
+    console.log("invoked!");
     setDarkMode((prevState) => !prevState);
   }
 
   return (
-    <div className={`App ${darkMode ? "darkmode" : "lightmode"}`}>
+    <BrowserRouter>
       <DarkTheme.Provider value={darkMode}>
-        <Header darkModeHandler={darkModeToggler} />
-        <Hero />
-        <Footer />
+        <Routes>
+          <Route path="/">
+            <Route index element={<Home darkModeHandler={darkModeToggler} />} />
+            <Route path="Private" element={<Private />} />
+          </Route>
+        </Routes>
       </DarkTheme.Provider>
-    </div>
+    </BrowserRouter>
   );
 }
 
