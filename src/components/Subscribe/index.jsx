@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import "./Subscribe.scss";
 import "../Link/Link.scss";
 import Form from "react-bootstrap/Form";
-import { db } from "../../firebase";
+import { firebaseApp } from "../../firebase";
 import { addDoc, getDocs, collection } from "firebase/firestore";
 
 function Subscribe(props) {
-  const colRef = collection(db, "adresses");
+  const colRef = collection(firebaseApp, "adresses");
   const date = new Date().toLocaleString();
   const [feedbackInput, setFeedbackInput] = useState("/assets/mail.svg");
   const [feedbackSubmit, setFeedbackSubmit] = useState({});
