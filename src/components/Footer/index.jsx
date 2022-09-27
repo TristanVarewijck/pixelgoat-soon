@@ -7,7 +7,7 @@ function Footer() {
   const darkMode = useContext(DarkTheme);
   const socialLinks = {
     twitterLink: "https://twitter.com/pixelgoatxyz",
-    discordLink: "",
+    substackLink: "",
     telegramLink: "",
   };
 
@@ -28,7 +28,7 @@ function Footer() {
         <li>
           <a href={socialLinks.discordLink} rel="noreferrer" target="_blank">
             <img
-              src={`/assets/discord${darkMode ? "-white" : ""}.svg`}
+              src={`/assets/substack${darkMode ? "-white" : ""}.svg`}
               alt="discord icon"
             />
           </a>
