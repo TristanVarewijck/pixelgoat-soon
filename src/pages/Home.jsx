@@ -6,7 +6,6 @@ import { DarkTheme } from "../App";
 
 function Home({ darkModeHandler }) {
   const darkMode = useContext(DarkTheme);
-  console.log(darkMode);
   return (
     <div className={`App ${darkMode ? "darkmode" : "lightmode"}`}>
       <Header darkModeHandler={darkModeHandler} />

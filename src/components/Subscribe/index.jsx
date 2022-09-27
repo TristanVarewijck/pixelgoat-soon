@@ -30,8 +30,6 @@ function Subscribe(props) {
       });
 
       setEmails([...emailArray]);
-
-      console.log(emailArray);
     }
     getDocuments();
   }, []);

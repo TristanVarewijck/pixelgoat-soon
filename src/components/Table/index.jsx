@@ -18,8 +18,6 @@ function Emails({ data }) {
 
   return (
     <div className="mt-5">
-      <h1>Incoming Emails</h1>
-      <p>All Emails collected from Newsletter Form</p>
       <CSVLink
         className="mt-5"
         data={data}

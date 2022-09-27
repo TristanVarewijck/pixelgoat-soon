@@ -1,8 +1,6 @@
 import { useState, createContext } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
 import "./scss/App.scss";
-
 import Home from "./pages/Home";
 import Private from "./pages/Private";
 import Auth from "./pages/Auth";
