@@ -1,16 +1,19 @@
 import Emails from "../components/Table";
-import { getDocs, collection } from "firebase/firestore";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { db } from "../firebase";
+import { getDocs, collection } from "firebase/firestore";
+import Button from "react-bootstrap/Button";
 
-function Private() {
+function Private({ logout }) {
   const [emails, setEmails] = useState([]);
   const colRef = collection(db, "adresses");
 
-  const headers = [
-    { email: "email", key: "email" },
-    { check: "check", key: "check" },
-  ];
+  const navigate = useNavigate();
+  function clickHandler() {
+    logout();
+    navigate("/");
+  }
 
   useEffect(() => {
     async function getDocuments() {
@@ -24,7 +27,8 @@ function Private() {
   }, []);
 
   return (
-    <div className="private">
+    <div className="private m-5">
+      <Button onClick={clickHandler}>Back to Home</Button>
       <Emails data={emails} />
     </div>
   );

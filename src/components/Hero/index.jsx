@@ -24,14 +24,14 @@ function Hero() {
           Pixelgoat Coming soon
         </small>
         <h1>
-          Get Notified before we Launch our Platform
+          Get notified before we launch our platform
           <img
             src={`/assets/hand${darkMode ? "-white" : ""}.svg`}
             alt="Shaking hand icon"
           />
         </h1>
         <p>
-          Subscribe and get a Valuable <span>Free NFT</span> Welcome Gift!
+          Subscribe and receive a <span>Free NFT</span> welcome gift!
         </p>
         <Subscribe hasIcon={true} />
       </div>

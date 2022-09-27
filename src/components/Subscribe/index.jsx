@@ -6,6 +6,8 @@ import { db } from "../../firebase";
 import { addDoc, getDocs, collection } from "firebase/firestore";
 
 function Subscribe(props) {
+  const colRef = collection(db, "adresses");
+  const date = new Date().toLocaleString();
   const [feedbackInput, setFeedbackInput] = useState("/assets/mail.svg");
   const [feedbackSubmit, setFeedbackSubmit] = useState({});
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -13,10 +15,10 @@ function Subscribe(props) {
   const [formData, setFormData] = useState({
     email: "",
     check: "",
+    date: date,
   });
-  const colRef = collection(db, "adresses");
   const validEmailCheck = new RegExp(
-    /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/,
+    /^[A-Za-z0-9_!#$%&'*+=?`{|}~^.-]+@[A-Za-z0-9.-]+$/,
     "gm"
   );
 
@@ -28,6 +30,8 @@ function Subscribe(props) {
       });
 
       setEmails([...emailArray]);
+
+      console.log(emailArray);
     }
     getDocuments();
   }, []);
@@ -74,7 +78,7 @@ function Subscribe(props) {
       setFeedbackSubmit((prevState) => {
         return {
           ...prevState,
-          message: "You Entered a invalid email adress.",
+          message: "You entered a invalid email adress.",
           icon: "/assets/warning-orange.svg",
         };
       });
@@ -82,7 +86,7 @@ function Subscribe(props) {
       setFeedbackSubmit((prevState) => {
         return {
           ...prevState,
-          message: "Please Check the Box before Subscribing!",
+          message: "Please check the box before subscribing!",
           icon: "/assets/arrow-down.svg",
         };
       });
@@ -91,14 +95,12 @@ function Subscribe(props) {
         setFeedbackSubmit((prevState) => {
           return {
             ...prevState,
-            message: "This email is already Subscribed to our Newsletter",
+            message: "This email is already subscribed to our newsletter.",
             icon: "/assets/warning-red.svg",
           };
         });
       } else {
         setHasSubmitted(true);
-
-        // insert new email adress after check
         async function insertEmail() {
           await addDoc(colRef, formData);
         }
@@ -147,7 +149,7 @@ function Subscribe(props) {
 
           <Form.Check
             type="checkbox"
-            label="Give us permission to sent You Our Newsletter"
+            label="Give us permission to send you our newsletter."
             onChange={handleFormData}
             name="check"
             value={formData.email}
@@ -160,8 +162,8 @@ function Subscribe(props) {
             <div>
               <small>{formData.email}</small>
               <p>
-                Welcome to PixelGoat, keep watching your Imbox to collect your
-                <span> Free NFT </span>Welcome Gift!
+                Welcome to Pixelgoat, keep watching your inbox to collect your
+                <span> free NFT</span> welcome gift!
               </p>
             </div>
 
